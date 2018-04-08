@@ -8,6 +8,7 @@ public abstract class Human extends Attacker{
     }
 
     //retornan modificadores de cuanto se multiplica al atacar con la clase descrita
+    public abstract void fight(Attackable attackable);
     public abstract double getKnightModifier();
     public abstract double getFireMageModifier();
     public abstract double getPriestModifier();

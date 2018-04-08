@@ -78,4 +78,19 @@ public class UndeadTest {
         double expected = 100;
         assertEquals(expected,health,0.01);
     }
+
+    @Test
+    public void cantFightDead(){
+        //first undead must die
+        priest.fight(undead); //50
+        priest.fight(undead); //0
+
+        double health = undead.getLife();
+        assertEquals(0,health,0.01);
+
+        Unit gob = new Goblin(); //new Goblin, 100 HP
+        undead.fight(gob);
+        health = gob.getLife();
+        assertEquals(100, health,0.01);
+    }
 }

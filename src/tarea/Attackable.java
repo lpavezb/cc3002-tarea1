@@ -1,9 +1,17 @@
 package tarea;
 
 public abstract class Attackable {
-    protected int lifePoints;
+    protected double healthPoints;
 
-    public int getLifePoints() {
-        return lifePoints;
+    public double getLife() {
+        return healthPoints;
     }
+
+    public boolean canBeHit(){
+        boolean canBeHit = healthPoints > 0;
+        return canBeHit;
+    }
+
+    public abstract void beHitBy(Human human);
+    public abstract void beHitBy(Unit unit);
 }

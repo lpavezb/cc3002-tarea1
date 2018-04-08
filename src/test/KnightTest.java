@@ -84,4 +84,22 @@ public class KnightTest {
         double expected = 100 - 10;
         assertEquals(expected,health,0.01);
     }
+
+    @Test
+    public void cantFightDead(){
+        //first knight must die
+        fireMage.fight(knight); // 80
+        fireMage.fight(knight); // 60
+        fireMage.fight(knight); // 40
+        fireMage.fight(knight); // 20
+        fireMage.fight(knight); // 0
+
+        double health = knight.getLife();
+        assertEquals(0,health,0.01);
+
+        Unit gob = new Goblin(); //new Goblin, 100 HP
+        knight.fight(gob);
+        health = gob.getLife();
+        assertEquals(100, health,0.01);
+    }
 }

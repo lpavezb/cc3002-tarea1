@@ -84,5 +84,23 @@ public class PriestTest {
         double expected = 100 - 50;
         assertEquals(expected,health,0.01);
     }
+
+    @Test
+    public void cantFightDead(){
+        //first priest must die
+        iceGolem.fight(priest); //80
+        fireMage.fight(priest); //60
+        iceGolem.fight(priest); //40
+        fireMage.fight(priest); //20
+        iceGolem.fight(priest); //0
+
+        double health = priest.getLife();
+        assertEquals(0,health,0.01);
+
+        Unit zombie = new Undead(); //new Undead, 100 HP
+        priest.fight(zombie);
+        health = zombie.getLife();
+        assertEquals(100, health,0.01);
+    }
 }
 

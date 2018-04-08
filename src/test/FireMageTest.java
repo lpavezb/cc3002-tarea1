@@ -84,4 +84,23 @@ public class FireMageTest {
         double expected = 100 - 5;
         assertEquals(expected,health,0.01);
     }
+
+    @Test
+    public void cantFightDead(){
+        //first firemage must die
+        iceGolem.fight(fireMage); //80
+        knight.fight(fireMage); //65
+        goblin.fight(fireMage); //50
+        iceGolem.fight(fireMage); //30
+        undead.fight(fireMage); //20
+        fireMage.fight(fireMage); //he killed himself
+
+        double health = fireMage.getLife();
+        assertEquals(0,health,0.01);
+
+        Unit golem = new IceGolem(); //new IceGolem, 100 HP
+        fireMage.fight(golem);
+        health = golem.getLife();
+        assertEquals(100, health,0.01);
+    }
 }

@@ -7,6 +7,7 @@ public class Priest extends Human {
     //constructor Priest
     public Priest(String name){
         healthPoints = INITIAL_LIFE_POINTS;
+        maxHP = INITIAL_LIFE_POINTS;
         attackPoints = INITIAL_ATTACK_POINTS;
         this.name = name;
     }
@@ -16,7 +17,15 @@ public class Priest extends Human {
         if(this.canFight())
             u.fightWith(this);
         else
-            System.out.println("Unidad muerta, no puede pelear");
+            System.out.println("Priest " + this.getName() + " cannot fight, unit is dead\n");
+    }
+
+    @Override
+    public void fight(Attackable attackable) {
+        if(this.canFight())
+            attackable.beHitBy(this);
+        else
+            System.out.println("Priest " + this.getName() + " cannot fight, unit is dead\n");
     }
 
     @Override
@@ -24,28 +33,37 @@ public class Priest extends Human {
         //ataque depende de profecion
         double modifier = human.getPriestModifier();
         double damage = modifier * human.getAttackPoints();
-        healthPoints -= damage;
+        this.receiveDamage(damage);
     }
 
     @Override
     public void fightWith(Goblin goblin) {
         //Goblin ataca normal a Priest
         double damage = goblin.getAttackPoints();
-        healthPoints -= damage;
+        this.receiveDamage(damage);
     }
 
     @Override
     public void fightWith(IceGolem iceGolem) {
         //IceGolem ataca doble a Priest
         double damage = 2 * iceGolem.getAttackPoints();
-        healthPoints -= damage;
+        this.receiveDamage(damage);
     }
 
     @Override
     public void fightWith(Undead undead) {
         //Undead ataca normal a Priest
         double damage = undead.getAttackPoints();
-        healthPoints -= damage;
+        this.receiveDamage(damage);
+    }
+
+    @Override
+    public void heal(double percentage) {
+        double max_hp = this.INITIAL_LIFE_POINTS;
+        double heal = max_hp * percentage;
+        healthPoints += heal;
+        if (healthPoints > max_hp)
+            healthPoints = max_hp;
     }
 
     @Override

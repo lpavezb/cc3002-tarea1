@@ -78,5 +78,23 @@ public class GoblinTest {
         double expected = 100;
         assertEquals(expected,health,0.01);
     }
+
+    @Test
+    public void cantFightDead(){
+        //first goblin must die
+        iceGolem.fight(goblin); //80
+        fireMage.fight(goblin); //60
+        iceGolem.fight(goblin); //40
+        fireMage.fight(goblin); //20
+        iceGolem.fight(goblin); //0
+
+        double health = goblin.getLife();
+        assertEquals(0,health,0.01);
+
+        Unit golem = new IceGolem(); //new IceGolem, 100 HP
+        goblin.fight(golem);
+        health = golem.getLife();
+        assertEquals(100, health,0.01);
+    }
 }
 
