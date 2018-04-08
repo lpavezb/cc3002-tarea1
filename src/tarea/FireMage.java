@@ -6,14 +6,17 @@ public class FireMage extends Human {
 
     //constructor FireMage
     public FireMage(String name){
-        lifePoints = INITIAL_LIFE_POINTS;
+        healthPoints = INITIAL_LIFE_POINTS;
         attackPoints = INITIAL_ATTACK_POINTS;
         this.name = name;
     }
 
     @Override
     public void fight(Unit u) {
-        u.fightWith(this);
+        if(this.canFight())
+            u.fightWith(this);
+        else
+            System.out.println("Unidad muerta, no puede pelear");
     }
 
     @Override
@@ -21,28 +24,28 @@ public class FireMage extends Human {
         //ataque depende de profecion
         double modifier = human.getFireMageModifier();
         double damage = modifier * human.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
     public void fightWith(Goblin goblin) {
         //Goblin ataca 1.5 a FireMage
         double damage = 1.5 * goblin.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
     public void fightWith(IceGolem iceGolem) {
         //IceGolem ataca doble a FireMage
         double damage = 2 * iceGolem.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
     public void fightWith(Undead undead) {
         //Undead ataca normal a FireMage
         double damage = undead.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
@@ -66,7 +69,7 @@ public class FireMage extends Human {
     }
 
     @Override
-    public double getIceGolemModidier() {
+    public double getIceGolemModifier() {
         return 5;
     }
 

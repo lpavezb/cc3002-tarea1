@@ -12,7 +12,7 @@ public abstract class Human extends Attacker{
     public abstract double getFireMageModifier();
     public abstract double getPriestModifier();
     public abstract double getGoblinModifier();
-    public abstract double getIceGolemModidier();
+    public abstract double getIceGolemModifier();
     public abstract double getUndeadModifier();
 
 }

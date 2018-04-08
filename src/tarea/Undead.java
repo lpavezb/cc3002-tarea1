@@ -6,13 +6,16 @@ public class Undead extends Attacker {
 
     //constructor Undead
     public Undead(){
-        lifePoints = INITIAL_LIFE_POINTS;
+        healthPoints = INITIAL_LIFE_POINTS;
         attackPoints = INITIAL_ATTACK_POINTS;
     }
 
     @Override
     public void fight(Unit u) {
-        u.fightWith(this);
+        if(this.canFight())
+            u.fightWith(this);
+        else
+            System.out.println("Unidad muerta, no puede pelear");
     }
 
     @Override
@@ -20,7 +23,7 @@ public class Undead extends Attacker {
         //ataque depende de profecion
         double modifier = human.getUndeadModifier();
         double damage = modifier * human.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
@@ -32,7 +35,7 @@ public class Undead extends Attacker {
     public void fightWith(IceGolem iceGolem) {
         //IceGolem ataca doble a Undead
         double damage = 2 * iceGolem.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override

@@ -6,13 +6,16 @@ public class Goblin extends Attacker {
 
     //constructor Goblin
     public Goblin(){
-        lifePoints = INITIAL_LIFE_POINTS;
+        healthPoints = INITIAL_LIFE_POINTS;
         attackPoints = INITIAL_ATTACK_POINTS;
     }
 
     @Override
     public void fight(Unit u) {
-        u.fightWith(this);
+        if(this.canFight())
+            u.fightWith(this);
+        else
+            System.out.println("Unidad muerta, no puede pelear");
     }
 
     @Override
@@ -20,7 +23,7 @@ public class Goblin extends Attacker {
         //ataque depende de profecion
         double modifier = human.getGoblinModifier();
         double damage = modifier * human.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
@@ -32,13 +35,13 @@ public class Goblin extends Attacker {
     public void fightWith(IceGolem iceGolem) {
         //IceGolem ataca doble a Goblin
         double damage = 2 * iceGolem.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
     public void fightWith(Undead undead) {
         //Undead ataca normal a goblin
         double damage = undead.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 }

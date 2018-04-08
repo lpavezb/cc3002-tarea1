@@ -6,21 +6,24 @@ public class IceGolem extends Attacker {
 
     //constructor IceGolem
     public IceGolem(){
-        lifePoints = INITIAL_LIFE_POINTS;
+        healthPoints = INITIAL_LIFE_POINTS;
         attackPoints = INITIAL_ATTACK_POINTS;
     }
 
     @Override
     public void fight(Unit u) {
-        u.fightWith(this);
+        if(this.canFight())
+            u.fightWith(this);
+        else
+            System.out.println("Unidad muerta, no puede pelear");
     }
 
     @Override
     public void fightWith(Human human) {
         //ataque depende de profecion
-        double modifier = human.getIceGolemModidier();
+        double modifier = human.getIceGolemModifier();
         double damage = modifier * human.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override
@@ -32,7 +35,7 @@ public class IceGolem extends Attacker {
     public void fightWith(IceGolem iceGolem) {
         //IceGolem ataca normal a IceGolem
         double damage = iceGolem.getAttackPoints();
-        lifePoints -= damage;
+        healthPoints -= damage;
     }
 
     @Override

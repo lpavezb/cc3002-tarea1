@@ -6,4 +6,6 @@ public interface Unit {
     void fightWith(Goblin goblin);
     void fightWith(IceGolem iceGolem);
     void fightWith(Undead undead);
+
+    double getLife();
 }
