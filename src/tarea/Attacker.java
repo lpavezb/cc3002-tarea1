@@ -1,10 +1,15 @@
 package tarea;
 
 public abstract class Attacker implements Unit {
-    protected int lifePoints;
+    protected double lifePoints;
+    protected double attackPoints;
 
-    public int getLifePoints() {
+    public double getLife() {
         return lifePoints;
+    }
+
+    public double getAttackPoints() {
+        return attackPoints;
     }
 
 }

@@ -1,28 +1,18 @@
 package tarea;
 
-public class Human extends Attacker {
-    @Override
-    public void fight(Unit u) {
+public abstract class Human extends Attacker{
+    protected String name;
 
+    public String getName(){
+        return name;
     }
 
-    @Override
-    public void fightWith(Human human) {
+    //retornan modificadores de cuanto se multiplica al atacar con la clase descrita
+    public abstract double getKnightModifier();
+    public abstract double getFireMageModifier();
+    public abstract double getPriestModifier();
+    public abstract double getGoblinModifier();
+    public abstract double getIceGolemModidier();
+    public abstract double getUndeadModifier();
 
-    }
-
-    @Override
-    public void fightWith(Goblin goblin) {
-
-    }
-
-    @Override
-    public void fightWith(IceGolem iceGolem) {
-
-    }
-
-    @Override
-    public void fightWith(Undead undead) {
-
-    }
 }
