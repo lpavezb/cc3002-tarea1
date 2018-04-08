@@ -1,16 +1,28 @@
 package tarea;
 
+/**
+ * Undead is an Attacker Unit
+ *
+ * @author Lukas Pavez
+ */
 public class Undead extends Attacker {
     public static final double INITIAL_ATTACK_POINTS = 10;
     public static final double INITIAL_LIFE_POINTS = 100;
 
-    //constructor Undead
+    /**
+     * class constructor
+     */
     public Undead(){
         healthPoints = INITIAL_LIFE_POINTS;
         maxHP = INITIAL_LIFE_POINTS;
         attackPoints = INITIAL_ATTACK_POINTS;
     }
 
+    /**
+     * method to fight against other Attackers
+     *
+     * @param u Units to attack
+     */
     @Override
     public void fight(Unit u) {
         if(this.canFight())
@@ -19,11 +31,21 @@ public class Undead extends Attacker {
             System.out.println("Undead cannot fight, unit is dead (again(?))\n");
     }
 
+    /**
+     * method to attack Attackables
+     *
+     * @param attackable attackable to attack
+     */
     @Override
     public void fight(Attackable attackable) {
         //Undead no ataca Attackables
     }
 
+    /**
+     * method to fight against other units
+     *
+     * @param human Human attacking the Undead
+     */
     @Override
     public void fightWith(Human human) {
         //ataque depende de profecion
@@ -32,11 +54,21 @@ public class Undead extends Attacker {
         this.receiveDamage(damage);
     }
 
+    /**
+     * method to fight against other units
+     *
+     * @param goblin Goblin attacking the Undead
+     */
     @Override
     public void fightWith(Goblin goblin) {
         //Goblin no ataca a Undead
     }
 
+    /**
+     * method to fight against other units
+     *
+     * @param iceGolem IceGolem attacking the Undead
+     */
     @Override
     public void fightWith(IceGolem iceGolem) {
         //IceGolem ataca doble a Undead
@@ -44,11 +76,21 @@ public class Undead extends Attacker {
         this.receiveDamage(damage);
     }
 
+    /**
+     * method to fight against other units
+     *
+     * @param undead Undead attacking the Undead
+     */
     @Override
     public void fightWith(Undead undead) {
         //Undead no ataca a Undead
     }
 
+    /**
+     * method to heal the Undead
+     *
+     * @param percentage number between 0-1, percentage to heal
+     */
     @Override
     public void heal(double percentage) {
         //Undead does not heal

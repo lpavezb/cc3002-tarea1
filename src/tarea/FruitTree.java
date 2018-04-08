@@ -1,13 +1,26 @@
 package tarea;
 
+/**
+ * FruitTree is an Attackable object that heals Humans and Goblins
+ *
+ * @author Lukas Pavez
+ */
 public class FruitTree extends Attackable{
     public static final double INITIAL_LIFE_POINTS = 50;
 
-    //constructor Rock
+
+    /**
+     * class constructor
+     */
     public FruitTree(){
         healthPoints = INITIAL_LIFE_POINTS;
     }
 
+    /**
+     * method to be hit by a Human object
+     *
+     * @param human Human that is attacking (Knight, FireMage or Priest)
+     */
     @Override
     public void beHitBy(Human human) {
         if (this.canBeHit()) {
@@ -24,6 +37,11 @@ public class FruitTree extends Attackable{
         }
     }
 
+    /**
+     * method to be hit by a Unit object
+     *
+     * @param unit Unit that is attacking (Goblin, IceGolem or Undead)
+     */
     @Override
     public void beHitBy(Unit unit) {
         if (this.canBeHit()) {
