@@ -54,7 +54,7 @@ public class FireMage extends Human {
      */
     @Override
     public void fightWith(Human human) {
-        //ataque depende de profecion
+        //attack depends on profession
         double modifier = human.getFireMageModifier();
         double damage = modifier * human.getAttackPoints();
         this.receiveDamage(damage);
@@ -67,7 +67,7 @@ public class FireMage extends Human {
      */
     @Override
     public void fightWith(Goblin goblin) {
-        //Goblin ataca 1.5 a FireMage
+        //Goblin deals x1.5 to FireMage
         double damage = 1.5 * goblin.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -79,7 +79,7 @@ public class FireMage extends Human {
      */
     @Override
     public void fightWith(IceGolem iceGolem) {
-        //IceGolem ataca doble a FireMage
+        //IceGolem deals x2 a FireMage
         double damage = 2 * iceGolem.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -91,7 +91,7 @@ public class FireMage extends Human {
      */
     @Override
     public void fightWith(Undead undead) {
-        //Undead ataca normal a FireMage
+        //Undead deals x1 to FireMage
         double damage = undead.getAttackPoints();
         this.receiveDamage(damage);
     }

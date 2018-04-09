@@ -38,7 +38,7 @@ public class Undead extends Attacker {
      */
     @Override
     public void fight(Attackable attackable) {
-        //Undead no ataca Attackables
+        //Undead doesn't attack Attackables
     }
 
     /**
@@ -61,7 +61,7 @@ public class Undead extends Attacker {
      */
     @Override
     public void fightWith(Goblin goblin) {
-        //Goblin no ataca a Undead
+        //Goblin doesnt attack Undead
     }
 
     /**
@@ -71,7 +71,7 @@ public class Undead extends Attacker {
      */
     @Override
     public void fightWith(IceGolem iceGolem) {
-        //IceGolem ataca doble a Undead
+        //IceGolem deals x2 to Undead
         double damage = 2 * iceGolem.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -83,7 +83,7 @@ public class Undead extends Attacker {
      */
     @Override
     public void fightWith(Undead undead) {
-        //Undead no ataca a Undead
+        //Undead doesn't attack Undead
     }
 
     /**

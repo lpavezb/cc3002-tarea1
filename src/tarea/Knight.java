@@ -54,7 +54,7 @@ public class Knight extends Human {
      */
     @Override
     public void fightWith(Human human) {
-        //ataque depende de profecion
+        //attack depends on profession
         double modifier = human.getKnightModifier();
         double damage = modifier * human.getAttackPoints();
         this.receiveDamage(damage);
@@ -67,7 +67,7 @@ public class Knight extends Human {
      */
     @Override
     public void fightWith(Goblin goblin) {
-        //Goblin ataca 0.5 a Knight
+        //Goblin deals x0.5 to Knight
         double damage = 0.5 * goblin.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -79,7 +79,7 @@ public class Knight extends Human {
      */
     @Override
     public void fightWith(IceGolem iceGolem) {
-        //IceGolem ataca 1.5 a Knight
+        //IceGolem deals x1.5 to Knight
         double damage = 1.5 * iceGolem.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -91,7 +91,7 @@ public class Knight extends Human {
      */
     @Override
     public void fightWith(Undead undead) {
-        //Undead ataca normal a Knight
+        //Undead deals x1 to Knight
         double damage = undead.getAttackPoints();
         this.receiveDamage(damage);
     }

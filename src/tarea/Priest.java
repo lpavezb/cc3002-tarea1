@@ -54,7 +54,7 @@ public class Priest extends Human {
      */
     @Override
     public void fightWith(Human human) {
-        //ataque depende de profecion
+        //attack depends on profession
         double modifier = human.getPriestModifier();
         double damage = modifier * human.getAttackPoints();
         this.receiveDamage(damage);
@@ -67,7 +67,7 @@ public class Priest extends Human {
      */
     @Override
     public void fightWith(Goblin goblin) {
-        //Goblin ataca normal a Priest
+        //Goblin deals x1 to Priest
         double damage = goblin.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -79,7 +79,7 @@ public class Priest extends Human {
      */
     @Override
     public void fightWith(IceGolem iceGolem) {
-        //IceGolem ataca doble a Priest
+        //IceGolem deals x2 to Priest
         double damage = 2 * iceGolem.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -91,7 +91,7 @@ public class Priest extends Human {
      */
     @Override
     public void fightWith(Undead undead) {
-        //Undead ataca normal a Priest
+        //Undead deals x1 to Priest
         double damage = undead.getAttackPoints();
         this.receiveDamage(damage);
     }

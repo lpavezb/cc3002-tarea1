@@ -51,7 +51,7 @@ public class Goblin extends Attacker {
      */
     @Override
     public void fightWith(Human human) {
-        //ataque depende de profecion
+        //attack depends on profession
         double modifier = human.getGoblinModifier();
         double damage = modifier * human.getAttackPoints();
         this.receiveDamage(damage);
@@ -64,7 +64,7 @@ public class Goblin extends Attacker {
      */
     @Override
     public void fightWith(Goblin goblin) {
-        //Goblin no ataca a Goblin
+        //Goblin doesn't attack Goblin
     }
 
     /**
@@ -74,7 +74,7 @@ public class Goblin extends Attacker {
      */
     @Override
     public void fightWith(IceGolem iceGolem) {
-        //IceGolem ataca doble a Goblin
+        //IceGolem deals x2 to Goblin
         double damage = 2 * iceGolem.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -86,7 +86,7 @@ public class Goblin extends Attacker {
      */
     @Override
     public void fightWith(Undead undead) {
-        //Undead ataca normal a goblin
+        //Undead deals x1 to Goblin
         double damage = undead.getAttackPoints();
         this.receiveDamage(damage);
     }

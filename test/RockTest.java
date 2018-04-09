@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RockTest {
-    private Human knight;
+    private Unit knight;
     private Attackable rock;
     private Unit golem;
     private Unit goblin;

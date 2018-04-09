@@ -38,7 +38,7 @@ public class IceGolem extends Attacker {
      */
     @Override
     public void fight(Attackable attackable) {
-        //IceGolem no ataca Attackables
+        //IceGolem doesn't attack Attackables
     }
 
     /**
@@ -48,7 +48,7 @@ public class IceGolem extends Attacker {
      */
     @Override
     public void fightWith(Human human) {
-        //ataque depende de profecion
+        //attack depends on profession
         double modifier = human.getIceGolemModifier();
         double damage = modifier * human.getAttackPoints();
         this.receiveDamage(damage);
@@ -61,7 +61,7 @@ public class IceGolem extends Attacker {
      */
     @Override
     public void fightWith(Goblin goblin) {
-        //Goblin no ataca a IceGolem
+        //Goblin doesn't attack IceGolem
     }
 
     /**
@@ -71,7 +71,7 @@ public class IceGolem extends Attacker {
      */
     @Override
     public void fightWith(IceGolem iceGolem) {
-        //IceGolem ataca normal a IceGolem
+        //IceGolem deals x1 to IceGolem
         double damage = iceGolem.getAttackPoints();
         this.receiveDamage(damage);
     }
@@ -83,7 +83,7 @@ public class IceGolem extends Attacker {
      */
     @Override
     public void fightWith(Undead undead) {
-        //Undead no ataca a IceGolem
+        //Undead doesn't attack IceGolem
     }
 
     /**

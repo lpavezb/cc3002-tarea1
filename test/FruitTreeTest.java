@@ -4,9 +4,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FruitTreeTest {
-    private Human knight;
-    private Human mage;
-    private Human priest;
+    private Unit knight;
+    private Unit mage;
+    private Unit priest;
     private Unit gob;
     private Unit golem;
     private Unit undead;

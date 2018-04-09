@@ -4,9 +4,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FireMageTest {
-    private Human knight;
-    private Human fireMage;
-    private Human priest;
+    private Unit knight;
+    private Unit fireMage;
+    private Unit priest;
     private Unit goblin;
     private Unit iceGolem;
     private Unit undead;
@@ -22,11 +22,6 @@ public class FireMageTest {
         undead = new Undead();
     }
 
-    @Test
-    public void nameTest(){
-        String name = fireMage.getName();
-        assertEquals("Lord Mage", name);
-    }
 
     @Test
     public void attackKnightTest(){

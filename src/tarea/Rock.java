@@ -41,6 +41,6 @@ public class Rock extends Attackable{
      */
     @Override
     public void beHitBy(Unit unit) {
-        //Units no atacan rocas
+        //nonhuman Units doesn't attack rocks
     }
 }
