@@ -1,11 +1,9 @@
-package test;
-
 import tarea.*;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class IceGolemTest {
+public class GoblinTest {
     private Unit knight;
     private Unit fireMage;
     private Unit priest;
@@ -25,72 +23,76 @@ public class IceGolemTest {
     }
 
     @Test
-    public void AttackKnightTest(){
-        //fight against a Knight (AP * 1.5 = 15)
-        iceGolem.fight(knight);
+    public void attackKnightTest(){
+        //fight against a Knight (AP * 0.5 = 5)
+        goblin.fight(knight);
         double health = knight.getLife();
-        double expected = 100 - 15;
+        double expected = 100 - 5;
         assertEquals(expected,health,0.01);
     }
 
     @Test
     public void AttackFireMageTest(){
-        //fight against a FireMage (AP * 2 = 20)
-        iceGolem.fight(fireMage);
+        //fight against a FireMage (AP * 1.5 = 15)
+        goblin.fight(fireMage);
         double health = fireMage.getLife();
-        double expected = 100 - 20;
+        double expected = 100 - 15;
         assertEquals(expected,health,0.01);
     }
 
     @Test
     public void AttackPriest(){
-        //fight against a Priest (AP * 2 = 20)
-        iceGolem.fight(priest);
+        //fight against a Priest (AP * 1 = 10)
+        goblin.fight(priest);
         double health = priest.getLife();
-        double expected = 100 - 20;
-        assertEquals(expected,health,0.01);
-    }
-
-    @Test
-    public void AttackGoblin(){
-        //fight against a Goblin (AP * 2 = 20)
-        iceGolem.fight(goblin);
-        double health = goblin.getLife();
-        double expected = 100 - 20;
-        assertEquals(expected,health,0.01);
-    }
-
-    @Test
-    public void AttackIceGolem(){
-        //fight against a IceGolem (AP * 1 = 10)
-        IceGolem golem = new IceGolem();
-        iceGolem.fight(golem);
-        double health = golem.getLife();
         double expected = 100 - 10;
         assertEquals(expected,health,0.01);
     }
 
     @Test
+    public void AttackGoblin(){
+        //fight against a Goblin (AP * 0 = 0)
+        Goblin g2 = new Goblin();
+        goblin.fight(g2);
+        double health = g2.getLife();
+        double expected = 100;
+        assertEquals(expected,health,0.01);
+    }
+
+    @Test
+    public void AttackIceGolem(){
+        //fight against a IceGolem (AP * 0 = 0)
+        goblin.fight(iceGolem);
+        double health = iceGolem.getLife();
+        double expected = 100;
+        assertEquals(expected,health,0.01);
+    }
+
+    @Test
     public void AttackUndead(){
-        //fight against a Undead (AP * 2 = 20)
-        iceGolem.fight(undead);
+        //fight against a Undead (AP * 0 = 0)
+        goblin.fight(undead);
         double health = undead.getLife();
-        double expected = 100 - 20;
+        double expected = 100;
         assertEquals(expected,health,0.01);
     }
 
     @Test
     public void cantFightDead(){
-        //first icegolem must die
-        fireMage.fight(iceGolem); //50
-        fireMage.fight(iceGolem); //0
+        //first goblin must die
+        iceGolem.fight(goblin); //80
+        fireMage.fight(goblin); //60
+        iceGolem.fight(goblin); //40
+        fireMage.fight(goblin); //20
+        iceGolem.fight(goblin); //0
 
-        double health = iceGolem.getLife();
+        double health = goblin.getLife();
         assertEquals(0,health,0.01);
 
         Unit golem = new IceGolem(); //new IceGolem, 100 HP
-        iceGolem.fight(golem);
+        goblin.fight(golem);
         health = golem.getLife();
         assertEquals(100, health,0.01);
     }
 }
+
