@@ -32,25 +32,38 @@ public class Undead extends Attacker {
     }
 
     /**
-     * method to attack Attackables
+     * method to fight against other units
      *
-     * @param attackable attackable to attack
+     * @param knight Knight attacking the Undead
      */
     @Override
-    public void fight(Attackable attackable) {
-        //Undead doesn't attack Attackables
+    public void fightWith(Knight knight) {
+        //Knight deals x1 to Undead
+        double damage = knight.getAttackPoints();
+        this.receiveDamage(damage);
     }
 
     /**
      * method to fight against other units
      *
-     * @param human Human attacking the Undead
+     * @param fireMage FireMage attacking the Undead
      */
     @Override
-    public void fightWith(Human human) {
-        //ataque depende de profecion
-        double modifier = human.getUndeadModifier();
-        double damage = modifier * human.getAttackPoints();
+    public void fightWith(FireMage fireMage) {
+        //FireMage deals x0.5 to Undead
+        double damage = 0.5 * fireMage.getAttackPoints();
+        this.receiveDamage(damage);
+    }
+
+    /**
+     * method to fight against other units
+     *
+     * @param priest Priest attacking the Undead
+     */
+    @Override
+    public void fightWith(Priest priest) {
+        //Priest deals x5 to Undead
+        double damage = 5 * priest.getAttackPoints();
         this.receiveDamage(damage);
     }
 

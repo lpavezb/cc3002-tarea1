@@ -15,18 +15,25 @@ public interface Unit {
     void fight(Unit u);
 
     /**
-     * method to attack Attackables
+     * method to fight against other units
      *
-     * @param attackable attackable to attack
+     * @param knight Knight attacking the Unit
      */
-    void fight(Attackable attackable);
+    void fightWith(Knight knight);
 
     /**
      * method to fight against other units
      *
-     * @param human Human attacking the Unit
+     * @param fireMage FireMage attacking the Unit
      */
-    void fightWith(Human human);
+    void fightWith(FireMage fireMage);
+
+    /**
+     * method to fight against other units
+     *
+     * @param priest Priest attacking the Unit
+     */
+    void fightWith(Priest priest);
 
     /**
      * method to fight against other units

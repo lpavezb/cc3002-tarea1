@@ -7,7 +7,7 @@ package tarea;
  *
  * @author Lukas Pavez
  */
-public abstract class Attackable {
+public abstract class Attackable implements AttackableObject {
     protected double healthPoints;
 
     /**
@@ -28,18 +28,5 @@ public abstract class Attackable {
         return canBeHit;
     }
 
-    /**
-     * method to be hit by a Human object
-     *
-     * @param human Human that is attacking (Knight, FireMage or Priest)
-     */
-    public abstract void beHitBy(Human human);
 
-
-    /**
-     * method to be hit by a Unit object
-     *
-     * @param unit Unit that is attacking (Goblin, IceGolem or Undead)
-     */
-    public abstract void beHitBy(Unit unit);
 }

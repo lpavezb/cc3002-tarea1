@@ -32,26 +32,37 @@ public class IceGolem extends Attacker {
     }
 
     /**
-     * method to attack Attackables
+     * method to fight against other units
      *
-     * @param attackable attackable to attack
+     * @param knight Knight attacking the IceGolem
      */
     @Override
-    public void fight(Attackable attackable) {
-        //IceGolem doesn't attack Attackables
+    public void fightWith(Knight knight) {
+        //Knight deals x0.5 to IceGolem
+        double damage = 0.5 * knight.getAttackPoints();
+        this.receiveDamage(damage);
     }
 
     /**
      * method to fight against other units
      *
-     * @param human Human attacking the IceGolem
+     * @param fireMage FireMage attacking the FireMage
      */
     @Override
-    public void fightWith(Human human) {
-        //attack depends on profession
-        double modifier = human.getIceGolemModifier();
-        double damage = modifier * human.getAttackPoints();
+    public void fightWith(FireMage fireMage) {
+        //FireMage deals x5 to IceGolem
+        double damage = 5 * fireMage.getAttackPoints();
         this.receiveDamage(damage);
+    }
+
+    /**
+     * method to fight against other units
+     *
+     * @param priest Priest attacking the IceGolem
+     */
+    @Override
+    public void fightWith(Priest priest) {
+        //Priest doesn't attack to IceGolem
     }
 
     /**

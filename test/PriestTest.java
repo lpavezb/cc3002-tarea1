@@ -22,12 +22,6 @@ public class PriestTest {
         undead = new Undead();
     }
 
-    /*@Test
-    public void nameTest(){
-        String name = priest.getName();
-        assertEquals("Saint Cleric", name);
-    }*/
-
     @Test
     public void attackKnightTest(){
         //fight against a Knight (AP * 0 = 0)

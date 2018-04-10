@@ -1,11 +1,11 @@
 package tarea;
 
 /**
- * Knight is a Human Attacker Unit
+ * Knight is a AbstractHuman Attacker Unit
  *
  * @author Lukas Pavez
  */
-public class Knight extends Human {
+public class Knight extends AbstractHuman {
     public static final double INITIAL_ATTACK_POINTS = 10;
     public static final double INITIAL_LIFE_POINTS = 100;
 
@@ -35,29 +35,37 @@ public class Knight extends Human {
     }
 
     /**
-     * method to attack Attackables
+     * method to fight against other units
      *
-     * @param attackable attackable to attack
+     * @param knight Knight attacking the Knight
      */
     @Override
-    public void fight(Attackable attackable) {
-        if(this.canFight())
-            attackable.beHitBy(this);
-        else
-            System.out.println("Knight " + this.getName() + " cannot fight, unit is dead\n");
+    public void fightWith(Knight knight) {
+        //Knight deals x1 to Knight
+        double damage = knight.getAttackPoints();
+        this.receiveDamage(damage);
     }
 
     /**
      * method to fight against other units
      *
-     * @param human Human attacking the Knight
+     * @param fireMage FireMage attacking the Knight
      */
     @Override
-    public void fightWith(Human human) {
-        //attack depends on profession
-        double modifier = human.getKnightModifier();
-        double damage = modifier * human.getAttackPoints();
+    public void fightWith(FireMage fireMage) {
+        //FireMage deals x2 to Knight
+        double damage = 2 * fireMage.getAttackPoints();
         this.receiveDamage(damage);
+    }
+
+    /**
+     * method to fight against other units
+     *
+     * @param priest Priest attacking the Knight
+     */
+    @Override
+    public void fightWith(Priest priest) {
+        //Priest doesn't attack to Knight
     }
 
     /**
@@ -109,65 +117,4 @@ public class Knight extends Human {
         if (healthPoints > max_hp)
             healthPoints = max_hp;
     }
-
-    /**
-     * modifier of Knight attacking a Knight
-     *
-     * @return modifier of Knight attacking a Knight
-     */
-    @Override
-    public double getKnightModifier() {
-        return 1;
-    }
-
-    /**
-     * modifier of Knight attacking a FireMAge
-     *
-     * @return modifier of Knight attacking a FireMage
-     */
-    @Override
-    public double getFireMageModifier() {
-        return 1.5;
-    }
-
-    /**
-     * modifier of Knight attacking a Priest
-     *
-     * @return modifier of Knight attacking a Priest
-     */
-    @Override
-    public double getPriestModifier() {
-        return 0;
-    }
-
-    /**
-     * modifier of Knight attacking a Goblin
-     *
-     * @return modifier of Knight attacking a Goblin
-     */
-    @Override
-    public double getGoblinModifier() {
-        return 1.25;
-    }
-
-    /**
-     * modifier of Knight attacking an IceGolem
-     *
-     * @return modifier of Knight attacking a IceGolem
-     */
-    @Override
-    public double getIceGolemModifier() {
-        return 0.5;
-    }
-
-    /**
-     * modifier of Knight attacking an Undead
-     *
-     * @return modifier of Knight attacking an Undead
-     */
-    @Override
-    public double getUndeadModifier() {
-        return 1;
-    }
-
 }
