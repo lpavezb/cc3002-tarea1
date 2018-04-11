@@ -14,6 +14,10 @@ public interface Unit {
      */
     void fight(Unit u);
 
+    void fight(Rock rock);
+
+    void fight(FruitTree fruitTree);
+
     /**
      * method to fight against other units
      *
@@ -48,20 +52,12 @@ public interface Unit {
      * @param iceGolem IceGolem attacking the Unit
      */
     void fightWith(IceGolem iceGolem);
-
     /**
      * method to fight against other units
      *
      * @param undead Undead attacking the Unit
      */
     void fightWith(Undead undead);
-
-    /**
-     * method to obtain the max HP of the object
-     *
-     * @return the maximum healthPoints of the object
-     */
-    double getMaxHP();
 
     /**
      * method to obtain the life of the object
@@ -88,4 +84,6 @@ public interface Unit {
      * @param percentage number between 0-1, percentage to heal
      */
     void heal(double percentage);
+
+
 }

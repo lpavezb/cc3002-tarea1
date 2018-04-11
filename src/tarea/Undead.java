@@ -32,6 +32,26 @@ public class Undead extends Attacker {
     }
 
     /**
+     * method to fight against fruitTrees
+     *
+     * @param fruitTree fruitTree to attack
+     */
+    @Override
+    public void fight(FruitTree fruitTree) {
+        //Undead doesnt attack fruitTrees
+    }
+
+    /**
+     * method to fight against rocks
+     *
+     * @param rock rock to attack
+     */
+    @Override
+    public void fight(Rock rock) {
+        //Undead doesn't attack rocks
+    }
+
+    /**
      * method to fight against other units
      *
      * @param knight Knight attacking the Undead

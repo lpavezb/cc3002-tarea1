@@ -32,6 +32,34 @@ public class Goblin extends Attacker {
     }
 
     /**
+     * method to fight against fruitTrees
+     *
+     * @param fruitTree fruitTree to attack
+     */
+    @Override
+    public void fight(FruitTree fruitTree) {
+        if (fruitTree.canFight() && this.canFight()) {
+            double damage = this.getAttackPoints();
+            fruitTree.receiveDamage(damage);
+            System.out.println("FruitTree hit, apple has fallen");
+            double recover = 0.15 * this.getMaxHP();
+            this.heal(0.15);
+            System.out.println("unit has eaten the apple");
+            System.out.println("unit has recovered " + recover + " HP\n");
+        }
+    }
+
+    /**
+     * method to fight against rocks
+     *
+     * @param rock rock to attack
+     */
+    @Override
+    public void fight(Rock rock) {
+        //Goblin doesn't attack rocks
+    }
+
+    /**
      * method to fight against other units
      *
      * @param knight Knight attacking the Goblin
@@ -106,7 +134,7 @@ public class Goblin extends Attacker {
      */
     @Override
     public void heal(double percentage) {
-        double max_hp = this.INITIAL_LIFE_POINTS;
+        double max_hp = this.getMaxHP();
         double heal = max_hp * percentage;
         healthPoints += heal;
         if (healthPoints > max_hp)

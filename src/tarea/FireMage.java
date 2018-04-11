@@ -103,18 +103,4 @@ public class FireMage extends AbstractHuman {
         double damage = undead.getAttackPoints();
         this.receiveDamage(damage);
     }
-
-    /**
-     * method to heal the FireMage
-     *
-     * @param percentage number between 0-1, percentage to heal
-     */
-    @Override
-    public void heal(double percentage) {
-        double max_hp = this.INITIAL_LIFE_POINTS;
-        double heal = max_hp * percentage;
-        healthPoints += heal;
-        if (healthPoints > max_hp)
-            healthPoints = max_hp;
-    }
 }
