@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>tarea.FruitTree</OriginalElement>
+  <nodes>
+    <node x="509.0" y="498.0">tarea.IceGolem</node>
+    <node x="0.0" y="819.0">tarea.FireMage</node>
+    <node x="641.0" y="393.0">tarea.AbstractAttacker</node>
+    <node x="854.5" y="108.0">tarea.AbstractAttackable</node>
+    <node x="568.5" y="0.0">tarea.Unit</node>
+    <node x="1063.0" y="405.0">tarea.Rock</node>
+    <node x="1035.0" y="498.0">tarea.Goblin</node>
+    <node x="280.0" y="570.0">tarea.AbstractHuman</node>
+    <node x="526.0" y="819.0">tarea.Priest</node>
+    <node x="263.0" y="819.0">tarea.Knight</node>
+    <node x="772.0" y="498.0">tarea.Undead</node>
+    <node x="932.0" y="405.0">tarea.FruitTree</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="tarea.Goblin" target="tarea.AbstractAttacker">
+      <point x="0.0" y="-135.5" />
+      <point x="1156.5" y="468.0" />
+      <point x="852.75" y="468.0" />
+      <point x="90.75" y="27.5" />
+    </edge>
+    <edge source="tarea.Undead" target="tarea.AbstractAttacker">
+      <point x="0.0" y="-135.5" />
+      <point x="893.5" y="478.0" />
+      <point x="792.25" y="478.0" />
+      <point x="30.25" y="27.5" />
+    </edge>
+    <edge source="tarea.Rock" target="tarea.AbstractAttackable">
+      <point x="0.0" y="-15.5" />
+      <point x="1103.5" y="368.0" />
+      <point x="1076.1666666666667" y="368.0" />
+      <point x="88.66666666666674" y="63.5" />
+    </edge>
+    <edge source="tarea.AbstractAttacker" target="tarea.Unit">
+      <point x="-60.5" y="-27.5" />
+      <point x="0.0" y="171.5" />
+    </edge>
+    <edge source="tarea.AbstractHuman" target="tarea.AbstractAttacker">
+      <point x="0.0" y="-63.5" />
+      <point x="384.5" y="468.0" />
+      <point x="671.25" y="468.0" />
+      <point x="-90.75" y="27.5" />
+    </edge>
+    <edge source="tarea.IceGolem" target="tarea.AbstractAttacker">
+      <point x="0.0" y="-135.5" />
+      <point x="630.5" y="478.0" />
+      <point x="731.75" y="478.0" />
+      <point x="-30.25" y="27.5" />
+    </edge>
+    <edge source="tarea.FruitTree" target="tarea.AbstractAttackable">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="63.5" />
+    </edge>
+    <edge source="tarea.AbstractAttacker" target="tarea.AbstractAttackable">
+      <point x="60.5" y="-27.5" />
+      <point x="822.5" y="368.0" />
+      <point x="898.8333333333334" y="368.0" />
+      <point x="-88.66666666666663" y="63.5" />
+    </edge>
+    <edge source="tarea.FireMage" target="tarea.AbstractHuman">
+      <point x="0.0" y="-99.5" />
+      <point x="121.5" y="794.0" />
+      <point x="314.8333333333333" y="794.0" />
+      <point x="-69.66666666666669" y="63.5" />
+    </edge>
+    <edge source="tarea.Knight" target="tarea.AbstractHuman">
+      <point x="0.0" y="-99.5" />
+      <point x="0.0" y="63.5" />
+    </edge>
+    <edge source="tarea.Priest" target="tarea.AbstractHuman">
+      <point x="0.0" y="-99.5" />
+      <point x="647.5" y="794.0" />
+      <point x="454.1666666666667" y="794.0" />
+      <point x="69.66666666666669" y="63.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="603.0" y="345.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
