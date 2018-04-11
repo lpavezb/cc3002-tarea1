@@ -1,11 +1,11 @@
 package tarea;
 
 /**
- * IceGolem is an Attacker Unit
+ * IceGolem is an AbstractAttacker Unit
  *
  * @author Lukas Pavez
  */
-public class IceGolem extends Attacker {
+public class IceGolem extends AbstractAttacker {
     public static final double INITIAL_ATTACK_POINTS = 10;
     public static final double INITIAL_LIFE_POINTS = 100;
 

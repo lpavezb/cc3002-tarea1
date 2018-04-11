@@ -1,7 +1,7 @@
 package tarea;
 
 /**
- * FireMage is a AbstractHuman Attacker Unit
+ * FireMage is a AbstractHuman AbstractAttacker Unit
  *
  * @author Lukas Pavez
  */

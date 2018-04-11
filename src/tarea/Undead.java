@@ -1,11 +1,11 @@
 package tarea;
 
 /**
- * Undead is an Attacker Unit
+ * Undead is an AbstractAttacker Unit
  *
  * @author Lukas Pavez
  */
-public class Undead extends Attacker {
+public class Undead extends AbstractAttacker {
     public static final double INITIAL_ATTACK_POINTS = 10;
     public static final double INITIAL_LIFE_POINTS = 100;
 

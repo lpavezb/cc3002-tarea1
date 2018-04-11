@@ -1,7 +1,7 @@
 package tarea;
 
 /**
- * Knight is a AbstractHuman Attacker Unit
+ * Knight is a AbstractHuman AbstractAttacker Unit
  *
  * @author Lukas Pavez
  */

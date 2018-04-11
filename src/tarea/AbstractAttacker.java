@@ -1,12 +1,12 @@
 package tarea;
 
 /**
- * Attacker is the abstract class for the objects that
+ * AbstractAttacker is the abstract class for the objects that
  * attack
  *
  * @author Lukas Pavez
  */
-public abstract class Attacker extends AbstractAttackable implements Unit{
+public abstract class AbstractAttacker extends AbstractAttackable implements Unit{
     protected double attackPoints;
 
     /**

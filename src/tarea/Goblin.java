@@ -1,11 +1,11 @@
 package tarea;
 
 /**
- * Goblin is an Attacker Unit
+ * Goblin is an AbstractAttacker Unit
  *
  * @author Lukas Pavez
  */
-public class Goblin extends Attacker {
+public class Goblin extends AbstractAttacker {
     public static final double INITIAL_ATTACK_POINTS = 10;
     public static final double INITIAL_LIFE_POINTS = 100;
 

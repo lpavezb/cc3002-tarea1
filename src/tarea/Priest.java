@@ -1,7 +1,7 @@
 package tarea;
 
 /**
- * Priest is a AbstractHuman Attacker Unit
+ * Priest is a AbstractHuman AbstractAttacker Unit
  *
  * @author Lukas Pavez
  */

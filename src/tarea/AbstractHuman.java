@@ -5,7 +5,7 @@ package tarea;
  *
  * @author Lukas Pavez
  */
-public abstract class AbstractHuman extends Attacker{
+public abstract class AbstractHuman extends AbstractAttacker {
     protected String name;
 
     /**
