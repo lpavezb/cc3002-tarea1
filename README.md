@@ -2,7 +2,7 @@
 
 Nota: 5.4
 
-#Codigo fuente: 1.9 de 3.5
+# Codigo fuente: 1.9 de 3.5
 
   Funcionalidad: 1.0 de 1.0
 
@@ -15,8 +15,8 @@ Nota: 5.4
   -0.1 tiene variables protected (debería tener privadas con getters).
 
 
-#Coverage: 1.0 de 1.0
+# Coverage: 1.0 de 1.0
 
-#Javadoc: 1.0 de 1.0
+# Javadoc: 1.0 de 1.0
 
-#Resumen: 0.5 de 0.5
+# Resumen: 0.5 de 0.5
